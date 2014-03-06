@@ -6,7 +6,7 @@ category : miyagi
 tags : [Symfony]
 ---
 
-##サーバ間処理で便利
+##サーバ間処理で便利なはず
 
 ##sfWebBrowserPlugin
 
