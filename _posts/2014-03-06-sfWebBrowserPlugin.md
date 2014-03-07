@@ -1,30 +1,30 @@
----
+ï»¿---
 layout: post
-title: SymfonyAHTTPƒNƒ‰ƒCƒAƒ“ƒg‹@”\‚ğ’ñ‹Ÿ‚µ‚Ä‚­‚ê‚éƒvƒ‰ƒOƒCƒ“
+title: Symfonyã€HTTPã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆæ©Ÿèƒ½ã‚’æä¾›ã—ã¦ãã‚Œã‚‹ãƒ—ãƒ©ã‚°ã‚¤ãƒ³
 date: 2014-03-06
 category : miyagi
 tags : [Symfony]
 ---
 
-##ƒT[ƒoŠÔˆ—‚Å•Ö—˜
+##ã‚µãƒ¼ãƒé–“å‡¦ç†ã§ä¾¿åˆ©
 
 ##sfWebBrowserPlugin
 
-// Ú‘±æURL
+// æ¥ç¶šå…ˆURL
 $url   = "http://hobe.jp/index.php";
-// ƒNƒGƒŠƒŠƒNƒGƒXƒg
+// ã‚¯ã‚¨ãƒªãƒªã‚¯ã‚¨ã‚¹ãƒˆ
 $query = array("a"=>1, "b"=>2);
 
-// POST‚É‚æ‚é‘—M
+// POSTã«ã‚ˆã‚‹é€ä¿¡
 $request = new sfWebBrowser();
 $request->post($url, $query);
-// HTTP ‰“šƒƒbƒZ[ƒW‚©‚ç‰“šƒR[ƒh‚ğæ“¾
+// HTTP å¿œç­”ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‹ã‚‰å¿œç­”ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—
 $request->getResponseCode()
-// ƒT[ƒo[‚©‚ç‰“šƒR[ƒh‚Æ‚Æ‚à‚É HTTP ‰“šƒƒbƒZ[ƒW‚ª•Ô‚³‚ê‚½ê‡A‚»‚ÌƒƒbƒZ[ƒW‚ğæ“¾
+// ã‚µãƒ¼ãƒãƒ¼ã‹ã‚‰å¿œç­”ã‚³ãƒ¼ãƒ‰ã¨ã¨ã‚‚ã« HTTP å¿œç­”ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒè¿”ã•ã‚ŒãŸå ´åˆã€ãã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å–å¾—
 $request->getResponseMessage()
 
 
-##“¯‚¶‚æ‚¤‚Èˆ—‚ğphp‚Ì‚İ‚Å‘‚­‚Æ
+##åŒã˜ã‚ˆã†ãªå‡¦ç†ã‚’phpã®ã¿ã§æ›¸ãã¨
 $url   = "http://hobe.jp/index.php";
 $query = http_build_query(array("a"=>1, "b"=>2));
 $header = array(
@@ -44,26 +44,26 @@ if($result === FALSE) {
     if(count($http_response_header) > 0) {
         $stat_tokens = explode(' ', $http_response_header[0]);
             switch($stat_tokens[1]) {
-                // 404 Not found ‚Ìê‡
+                // 404 Not found ã®å ´åˆ
                 case 404:
                     echo "404";
                     break;
-                // 500 Internal Server Error ‚Ìê‡
+                // 500 Internal Server Error ã®å ´åˆ
                 case 500:
                     echo "500";
                     break;
-                // ‚»‚Ì‘¼
+                // ãã®ä»–
                 default:
-                    echo "‚»‚Ì‘¼ƒGƒ‰[";
+                    echo "ãã®ä»–ã‚¨ãƒ©ãƒ¼";
                     break;
             }
-    // ƒ^ƒCƒ€ƒAƒEƒg‚Ìê‡
+    // ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆã®å ´åˆ
     } else {
-        echo "ƒ^ƒCƒ€ƒAƒEƒg";
+        echo "ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆ";
     }
-// ¬Œ÷
+// æˆåŠŸ
 } else {
-    echo "¬Œ÷";
+    echo "æˆåŠŸ";
 }
 
-‚È‚ñ‚©•Ö—˜‚»‚¤II
+ãªã‚“ã‹ä¾¿åˆ©ãã†ï¼ï¼
